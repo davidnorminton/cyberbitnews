@@ -46,7 +46,7 @@
     "shelljs": "^0.7.6",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "url-loader": "^0.5.8",
+    "url-loader": "^1.1.2",
     "vue-axios": "^2.1.4",
     "vue-loader": "^13.3.0",
     "vue-template-compiler": "^2.5.2",

@@ -1,4 +1,4 @@
-<div style="text-align: center; width:100%">
+<div align="center">
   <img src="https://www.cyberbitnews.com/static/img/logo.PNG" alt="cyberbitnews logo">
 </div> 
 # Cyber bit news - frontend files

@@ -1,0 +1,16 @@
+/* view all sites page */
+.list-wrap {
+  width: 800px;
+  text-align: center;
+}
+.alllist {
+  color: $primary-medium-color;
+  font-size: 25px;
+  text-align: left;
+  list-style: none;
+}
+.alllist a {
+  color: $primary-medium-color;
+  font-size: 25px;
+  text-decoration: none;
+}

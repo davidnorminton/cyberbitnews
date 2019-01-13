@@ -1,0 +1,48 @@
+<template lang="pug">
+  transition(name='outIn', mode='in-out')
+    aside
+      .top-lists
+        h3.heading.sub-heading Top sites
+        ul.side-list
+          li
+            span.list-numb 1
+            router-link.nav-link(to='/website/freecodecamp') freecodecamp 
+          li
+            span.list-numb 2
+            router-link.nav-link(to='/website/smashingmagazine') smashingmagazine
+          li
+            span.list-numb 3
+            router-link.nav-link(to='/website/thehackernews') thehackernews
+          li
+            span.list-numb 4
+            router-link.nav-link(to='/website/offensive-security') offensive-security
+          li
+            span.list-numb 5
+            router-link.nav-link(to='/website/hackread') hackread        
+        h3.heading.sub-heading Top search queries
+
+        ul.list-blocks
+          li
+            router-link.nav-link(to='/search/css') css
+          li
+            router-link.nav-link(to='/search/javascript') javascript
+          li
+            router-link.nav-link(to='/search/linux') linux
+          li
+            router-link.nav-link(to='/search/vulnerability') vulnerability
+          li
+            router-link.nav-link(to='/search/ubuntu') ubuntu
+          li
+            router-link.nav-link(to='/search/adobe') adobe
+          li
+            router-link.nav-link(to='/search/git') git
+          li
+            router-link.nav-link(to='/search/nodejs') nodejs
+          li
+            router-link.nav-link(to='/search/vue') vue
+          li  
+            router-link.nav-link(to='/search/web%20design') web design 
+      footer
+        span.footer-link about
+        span.footer-link privacy     
+</template>

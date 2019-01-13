@@ -1,0 +1,18 @@
+transition(name='outIn', mode='in-out')
+  template
+    div
+      section.about-section
+        .about-block
+          a(target='_blank', :href="link")
+            h2 {{ site }}
+          em.about-url {{ link }}
+          .about-site
+            p
+              | {{ bio }}
+              a(href='')
+                span
+                  | READ MORE
+      h3.heading.main-heading Latest news from {{ site }}
+      
+      include list-post.pug
+    

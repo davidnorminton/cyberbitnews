@@ -35,7 +35,6 @@ export default {
         
         for(; i < l; i++) {
           this.delay(items[i], i);
-          console.log(i + '  ' + items[i])
         } 
       }
       this.menuVisible = 1;

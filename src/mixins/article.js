@@ -34,18 +34,17 @@ export const article = {
       return `${month} ${day} ${year}`;
     },
     getApiRoute(category) {
-        if(category){
-          return `${this.api}${category}&page=${this.page}`;
-        } else {
-          return `${this.api}${this.page}`;
-        }
+      if(category){
+        return `${this.api}${category}&page=${this.page}`;
+      } else {
+        return `${this.api}${this.page}`;
+      }
     },
     getPage() {
       /*
        * Handle the page state - check the current route isn't
        * equal to the value in this.previous
        */
-      console.log(this.$route)
       if(!this.params) this.params = this.$route.params.id;
       if(this.params !== this.previous) {
         this.previous = this.params;

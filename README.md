@@ -1,5 +1,8 @@
-
-#Cyber bit news - frontend files
+<div align="center">
+  <img src="https://www.cyberbitnews.com/static/img/logo.PNG" alt="cyberbitnews logo">
+</div> 
+# Cyber bit news - frontend files
+> *Note:* This project contains a custom api which would have to be created for this site to function.
 
 ## Build Setup
 

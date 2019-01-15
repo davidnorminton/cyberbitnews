@@ -2,6 +2,7 @@ html {
   overflow: -moz-scrollbars-vertical; 
   overflow-y: scroll;
   background: $main-background-color;
+  scroll-behavior: smooth;
 }
 body { 
   font-family: $main-font-family;
@@ -71,6 +72,8 @@ body {
   padding-top: 85px;
   box-sizing: border-box;
   margin: 0 auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }  
 .content {
   max-width: $content-width;

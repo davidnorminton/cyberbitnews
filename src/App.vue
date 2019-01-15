@@ -4,7 +4,8 @@
     .main-container
       .content
         transition(name='moveInUp')
-          router-view
+          .page-content(:key="$route.params.id")
+            router-view
       include templates/aside.pug  
 </template>
 
@@ -71,16 +72,4 @@ export default {
 
 <style lang="scss">
 @import "./scss/style.scss";
-
-.moveInUp-leave-active{
-  animation: moveInUp .3s ease-in;
-}
-@keyframes moveInUp{
- 0%{
-  transform: translateY(0);
- }
-  100%{
-  transform: translateY(-400px);
- }
-}
 </style>

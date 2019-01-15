@@ -7,6 +7,9 @@ export const article = {
     }
   },
   methods: {
+    enter() {
+      this.title = this.$route.params.id;
+    },
     snippet(title, intro) {
       if (title.length > 55) return intro.substring(0, 170).replace('...', '');
       return intro.substring(0, 250).replace('...','');
@@ -34,25 +37,15 @@ export const article = {
       return `${month} ${day} ${year}`;
     },
     getApiRoute(category) {
-      if(category){
-        return `${this.api}${category}&page=${this.page}`;
-      } else {
-        return `${this.api}${this.page}`;
-      }
+        if(category){
+          return `${this.api}${category}&page=${this.page}`;
+        } else {
+          return `${this.api}${this.page}`;
+        }
     },
     getPage() {
-      /*
-       * Handle the page state - check the current route isn't
-       * equal to the value in this.previous
-       */
-      if(!this.params) this.params = this.$route.params.id;
-      if(this.params !== this.previous) {
-        this.previous = this.params;
-        this.news.length = 0;
-      } 
-
       this.axios
-        .get( this.getApiRoute(this.params), {
+        .get( this.getApiRoute(this.$route.params.id), {
             headers: {
               "Access-Control-Allow-Origin": "*",
               useCredentails: false 
@@ -72,7 +65,8 @@ export const article = {
           this.bottom = false;
           // remove the page loading notification
           const placeholder = document.getElementById('loading');
-          
+          // check if the news array has changed
+
           if(placeholder) {
             placeholder.parentNode.removeChild(placeholder);
           }

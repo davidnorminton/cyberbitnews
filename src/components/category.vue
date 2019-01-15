@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     include ../templates/breadcrumbs.pug
-    h3.heading.main-heading Latest articles - "{{ $route.params.id }}"
+    h3.heading.main-heading Latest articles - "{{ title }}"
     include ../templates/list.pug
 </template>  
 <script>
@@ -18,7 +18,8 @@ export default{
       page: 1,
       api: this.apiRoute.default,
       previous: null,
-      params: null
+      params: null,
+      title: ''
     }
   },
   watch: {
@@ -30,6 +31,7 @@ export default{
   mounted() {
     this.getPage();
     this.scroll();
+    if(this.title.length < 1) this.title = this.$route.params.id;
   }
 }
 </script>

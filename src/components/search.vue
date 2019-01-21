@@ -1,6 +1,5 @@
 <template lang="pug">
   div
-    include ../templates/breadcrumbs.pug
     h3.heading.main-heading.main-title Search results for "{{ $route.params.id }}"
     include ../templates/list.pug
 </template>

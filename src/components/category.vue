@@ -1,8 +1,10 @@
 <template lang="pug">
   div
-    include ../templates/breadcrumbs.pug
-    h3.heading.main-heading Latest articles - "{{ title }}"
-    include ../templates/list.pug
+    div(v-if='news.length === 0')
+      h1 This is with no category selected
+    div(v-else)  
+      h3.heading.main-heading Latest articles - "{{ title }}"
+      include ../templates/list.pug
 </template>  
 <script>
 import {article} from '@/mixins/article'
@@ -26,6 +28,7 @@ export default{
     '$route'() { 
       this.params = this.$route.params.id;
       this.getPage();
+      console.log(this.$route.params)
     }  
   },
   mounted() {

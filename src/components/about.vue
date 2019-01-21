@@ -1,6 +1,5 @@
 <template lang="pug">
   div
-    include ../templates/breadcrumbs.pug
     include ../templates/about.pug
 </template>  
 <script>

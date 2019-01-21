@@ -1,6 +1,6 @@
 .breadcrumbs
   span(v-if='$route.name != "home"')  
-    router-link.crumb-link(to='/home') home
+    router-link.crumb-link(to='/') home
   span.icon-right-open(v-if='$route.name && $route.name != "home"')
   span.crumb-link(v-if='$route.name') {{ $route.name }}
   span.icon-right-open(v-if='$route.params.id')

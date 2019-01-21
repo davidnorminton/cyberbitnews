@@ -15,6 +15,6 @@ article(v-for='(article, index) in news', :key='index')
       div
         i.icon-calendar(aria="hidden")
         time.post-date {{ fmtDate(article.date, currentYear) }}
-        i.icon-clock(aria="hidden")
+        i.icon-clock(aria="hidden", v-if="article.wpm")
         span.wpm {{ wpm(article.wpm) }}
         i.icon-chat(aria="hidden")

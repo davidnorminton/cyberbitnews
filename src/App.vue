@@ -2,10 +2,10 @@
   #app
     include templates/header.pug
     .main-container
-      .content
-        transition(name='moveInUp')
-          .page-content(:key="$route.params.id")
-            router-view
+      transition(name='outIn')
+        .content(:key="$route.params.id")
+          include templates/breadcrumbs.pug
+          router-view
       include templates/aside.pug  
 </template>
 
@@ -65,7 +65,7 @@ export default {
       searchBox.style.display = 'none';
       this.$router.push({ name: 'search', params: { id: input }});
       document.querySelector('.search-field').value = 0;
-    }    
+    }
   }
 }
 </script>

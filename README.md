@@ -1,23 +1,22 @@
-<div align="center">
-  <img src="https://www.cyberbitnews.com/static/img/logo.PNG" alt="cyberbitnews logo">
-</div> 
-# Cyber bit news - frontend files
-> *Note:* This project contains a custom api which would have to be created for this site to function.
+# cbt
+
+> My incredible Nuxt.js project
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+$ npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# build for production with minification
-npm run build
+# build for production and launch server
+$ npm run build
+$ npm start
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# generate static project
+$ npm run generate
 ```
 
-[Visit website](https://cyberbitnews.com).
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

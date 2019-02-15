@@ -1,0 +1,48 @@
+<template lang="pug">
+  transition(name='outIn', mode='in-out')
+    aside
+      .top-lists
+        h3.heading.sub-heading Top sites
+        ul.side-list
+          li
+            span.list-numb 1
+            nuxt-link.nav-link(to='/website/freecodecamp', title="Freecodecamp") freecodecamp 
+          li
+            span.list-numb 2
+            nuxt-link.nav-link(to='/website/smashingmagazine', title="Smashing Magazine") smashingmagazine
+          li
+            span.list-numb 3
+            nuxt-link.nav-link(to='/website/thehackernews', title="the Hacker News") thehackernews
+          li
+            span.list-numb 4
+            nuxt-link.nav-link(to='/website/offensive-security', title="Ofensive Security") offensive-security
+          li
+            span.list-numb 5
+            nuxt-link.nav-link(to='/website/hackread', title="hackread") hackread        
+        h3.heading.sub-heading Top search queries
+
+        ul.list-blocks
+          li
+            nuxt-link.nav-link(to='/search/css', title="Search for css articles") css
+          li
+            nuxt-link.nav-link(to='/search/javascript', title="Search for javascript articles") javascript
+          li
+            nuxt-link.nav-link(to='/search/linux', title="Search for linux articles") linux
+          li
+            nuxt-link.nav-link(to='/search/vulnerability', title="Search for vulnerabitity articles") vulnerability
+          li
+            nuxt-link.nav-link(to='/search/ubuntu', title="Search for ubuntu articles") ubuntu
+          li
+            nuxt-link.nav-link(to='/search/adobe', title="Search for adobe articles") adobe
+          li
+            nuxt-link.nav-link(to='/search/git', title="Search for git articles") git
+          li
+            nuxt-link.nav-link(to='/search/nodejs', title="Search for node js articles") nodejs
+          li
+            nuxt-link.nav-link(to='/search/vue', title="Search for vue articles") vue
+          li  
+            nuxt-link.nav-link(to='/search/web%20design', title="Search for web design articles") web design 
+      footer
+        span.footer-link about
+        span.footer-link privacy     
+</template>

@@ -4,7 +4,7 @@
     .post
       .post-image-wrap
         .post-image(:style="{\
-          background: 'url(' + article.image + '), url(https:/static.cyberbitnews.com/img/placeholder.jpg) no-repeat', \
+          background: 'url(' + article.image + '), url(https://static.cyberbitnews.com/img/placeholder.jpg) no-repeat', \
           backgroundSize: 'cover', \
           backgroundPosition: 'center center',\
           width: '100%'}", :data-src='article.image')

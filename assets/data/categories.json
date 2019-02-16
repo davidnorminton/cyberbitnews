@@ -1,0 +1,27 @@
+[{
+  "developer": {
+    "title": ["Dev", "eloper"],
+    "included": [
+      "freecodecamp", "dailyjs", "gitconnected", "smashingmagazine"
+    ]
+  },
+  "infosec": {
+    "title": ["Info", "sec"],
+    "included": [
+      "thehackernews", "welivesecurity", "rapid7",  "threatpost", 
+      "securityledger", "scmagazine", "hackread", "offensive-security"
+    ]
+  },
+  "tech": {
+    "title": ["Te","ch"],
+    "included": [
+      "thenextweb", "arstechnica"
+    ]
+  },
+  "linux": {
+    "title": ["Lin", "ux"],
+    "included": [
+      "omgubuntu", "techmint", "linuxuprising"
+    ]
+  }
+}]

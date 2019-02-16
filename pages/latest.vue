@@ -1,5 +1,7 @@
 <template lang="pug">
-  div
+  div       
+    spinner
+    div(v-cloak)  
     h3.heading.main-heading Latest articles
     transition(name='outIn')
       cardView(:news="news", v-if="$store.state.view.mode === 'card'")
@@ -10,22 +12,37 @@
 import listView from '@/components/listView'
 import cardView from '@/components/cardView'
 import {article} from '@/middleware/article'
+import spinner from '@/components/spinner'
 
 export default{
   name:'home',
   props: ['id'],
   mixins: [article],
   components: {
+    spinner,
     listView,
     cardView
-  },  
+  },
+  head () {
+    return {
+      title: 'cyberbitnews - latest tech, developer, infosec, linux news aggregator',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { 
+          hid: 'description', 
+          name: 'description', 
+          content: 'cyberbitnews news aggregator. Stay upto date with the latest news and stories \
+            in tech, software development, infosec, and linux.' }
+      ]
+    }
+  },
 	data() {
     return {    
       news: [],
       page: 1,
       previous: null,
       params: null,
-      apiRoute: '/latest.php?page='
+      apiRoute: '/latest.php?page=',
     }
   },
   watch: {
@@ -43,4 +60,5 @@ export default{
 </script>
 
 <style lang="scss"> 
+v-clock { display: none}
 </style>

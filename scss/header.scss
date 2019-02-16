@@ -2,7 +2,7 @@ header {
   position: fixed;
   box-sizing: border-box;
   width: 100%;
-  background: $secondary-dark-color;
+  background: #186491;
   padding: 10px 15px;
   z-index: 1;
   box-shadow: 0px 3px 30px $primary-light-color;
@@ -135,7 +135,7 @@ header a h1 small {
   width: 285px;
   color: $primary-medium-color;
   display: inline-block;
-  border: 1px solid $primary-light-color;
+  border: 1px solid transparent;
   border-radius: 2rem;
   font-size: 0.9rem;
   line-height: 2rem;

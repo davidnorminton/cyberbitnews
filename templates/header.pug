@@ -46,9 +46,7 @@ header
   .menu-top
     i#close-button.close-menu.icon-cancel(@click='closeMenu')
   nav.header-menu
-    ul.category-list
-      li.menu-item
-        nuxt-link.nav-link(to='/home', @click.native='closeMenu', exact) home    
+    ul.category-list   
       li.menu-item
         nuxt-link.nav-link(to='/latest', @click.native='closeMenu', exact) latest
       li.menu-item

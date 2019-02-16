@@ -25,6 +25,19 @@ export default{
     listView,
     cardView
   },    
+  head () {
+    return {
+      title: 'cyberbitnews - latest ' + this.$route.params.id + '.News aggregator',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { 
+          hid: 'description', 
+          name: 'description', 
+          content: 'cyberbitnews news aggregator. Stay upto date with the latest news and stories' +
+            ' for ' + this.$route.params.id }
+      ]
+    }
+  },
   data() {
     return {
       news: [],

@@ -1,7 +1,12 @@
 <template lang="pug">
   #app
     TopHeader
-    .main-container
+    .index-container(v-if="$route.path === '/'") 
+      transition(name='outIn')
+        div(:key="$route.params.id")
+          breadCrumbs
+          nuxt      
+    .main-container(v-if="$route.path !== '/'")
       .content(v-if="$store.state.view.mode === 'list'")
         transition(name='outIn')
           div(:key="$route.params.id")
@@ -12,7 +17,7 @@
           div(:key="$route.params.id")
             breadCrumbs
             nuxt
-      aSide(v-if="$store.state.view.mode === 'list'") 
+      aSide(v-if="$store.state.view.mode === 'list'")
 </template>
 <script>
 import TopHeader from "@/components/header"

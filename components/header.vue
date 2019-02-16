@@ -1,11 +1,11 @@
 <template lang="pug">
-  #app
+  #peace
     include ../templates/header.pug
 </template>
 
 <script>
 export default {
-  name: 'header',
+  name: 'main-header',
   data: function(){
     return {
       menuVisible: 0,

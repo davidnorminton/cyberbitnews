@@ -48,7 +48,9 @@ header
   nav.header-menu
     ul.category-list
       li.menu-item
-        nuxt-link.nav-link(to='/', @click.native='closeMenu', exact) home
+        nuxt-link.nav-link(to='/home', @click.native='closeMenu', exact) home    
+      li.menu-item
+        nuxt-link.nav-link(to='/latest', @click.native='closeMenu', exact) latest
       li.menu-item
         nuxt-link.nav-link(to='/category/developer', @click.native='closeMenu') developer
       li.menu-item

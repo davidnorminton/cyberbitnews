@@ -1,9 +1,7 @@
 <template lang="pug">
   div
-    h3.heading.main-heading Latest articles
-    transition(name='outIn')
-      cardView(:news="news", v-if="$store.state.view.mode === 'card'")
-      listView(:news="news", v-else)
+    h3.heading.main-heading Landing page
+    a(href='/latest') Latest news
 </template>
 
 <script>
@@ -13,31 +11,14 @@ import {article} from '@/middleware/article'
 
 export default{
   name:'index',
-  props: ['id'],
-  mixins: [article],
-  components: {
-    listView,
-    cardView
-  },  
+  props: ['id'], 
 	data() {
     return {    
-      news: [],
-      page: 1,
-      previous: null,
-      params: null,
-      apiRoute: '/latest.php?page='
     }
   },
-  watch: {
-    '$route'() { 
-      this.params = this.$route.params.id;
-      this.getPage();
-    }  
+  watch: { 
   },
   mounted() {
-    this.getPage();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    this.scroll();
   }
 }
 </script>

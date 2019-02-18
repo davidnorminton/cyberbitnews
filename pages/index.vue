@@ -71,7 +71,7 @@ header {
 .goto {
   text-align: center;
   position: relative;
-  margin-top: 140px;
+  margin-top: 60px;
   padding: 60px 0;
 
   h2 {

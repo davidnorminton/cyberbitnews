@@ -3,7 +3,7 @@
     h3.heading.main-heading Categories
     ul.list-cats
       li(v-for="cat in subs")
-        img.cat-image(:src="'/static/img/' + cat.image") 
+        img.cat-image(:src="'https://static.cyberbitnews.com/img/' + cat.image") 
         nuxt-link(:to="'/category/' + cat.name.toLowerCase()") {{cat.name}}
 </template>
 <script>

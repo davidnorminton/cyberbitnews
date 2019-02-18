@@ -83,6 +83,7 @@ header {
     display: block;
     width: 38%;
     margin: 0 auto;
+    margin-bottom: 80px;
   }
   h2::before {
     content: '';

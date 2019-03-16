@@ -5,7 +5,11 @@ aside {
   box-sizing: border-box;
   padding: 20px 40px 0;;
 }
-
+@media only screen and (max-width: 1300px) {
+  aside {
+    display: none;
+  }
+}
 .side-list {
   padding: 0;
   list-style: none;

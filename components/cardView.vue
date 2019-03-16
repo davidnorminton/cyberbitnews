@@ -9,20 +9,19 @@
           backgroundPosition: 'center center',\
           width: '100%'}", :data-src='article.image')
       .from-info
-        nuxt-link.nav-link.posted-from(:to="'/website/' + article.domain") {{ article.domain }}
-        nuxt-link.nav-link(:to="'/comments/' + article.id") 
-          i.icon-chat(aria="hidden")    
+        nuxt-link.nav-link.posted-from(:to="'/website/' + article.domain") {{ article.domain }}    
       .post-text
         a.post-title(target='_blank', :href="article.url ")
           h2 {{ article.title }}
-        .post-snippet {{ snippet(article.title, article.snippet) }} ...
       .info
         .date
-          i.icon-calendar(aria="hidden")
+          i.icon-calendar-empty(aria="hidden")
           time.post-date {{ fmtDate(article.date, currentYear) }}
         .wpm  
           i.icon-clock(aria="hidden", v-if="article.wpm")
           span.wpm {{ wpm(article.wpm) }}
+        nuxt-link.nav-link(:to="'/comments/' + article.id") 
+          i.icon-chat(aria="hidden")  
 </template>
 <script>
 
@@ -71,28 +70,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     float: left;
     margin: 10px;
     box-sizing: border-box;
-    box-shadow: 0 0 6px 1px #38383e;
-    height: 440px;
+    height: 335px;
     position: relative;
-}
-@media only screen and (max-width: 679px) {
-    .card {
-        width: calc(100% - 20px);
-    }
-}
-@media only screen and (min-width: 680px) {
-    .card {
-        width: calc(50% - 20px);
-    }
-}
-@media only screen and (min-width: 1020px){
-    .card {
-        width: calc(33.33% - 20px);
-    }
+    width: 275px;
 }
 
 .card .post-image-wrap {
@@ -102,43 +86,43 @@ export default {
     width: 100%;
     float: right;
     box-sizing: border-box;
-    padding: 8px 10px;
+    padding: 0;
 }
 .card .info {
     clear: both;
-    background: #e3e2e2;
-    height: 38px;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    padding: 10px 0 0 10px;
     box-sizing: border-box;
 }
+$info-color: #888080;
 .from-info {
-    line-height: 30px;
-    background: #eeeff0;
-    padding: 5px 0 5px 15px;
-    width: calc(100% - 15px);
     position: relative;
     clear: both;
 }
 .card .post-date {
     margin-left: 8px;
+    color: $info-color !important;
+}
+.card .icon-calendar-empty, .card .icon-clock, .card .wpm {
+  color: $info-color !important;
 }
 .card .icon-chat {
     position: absolute;
     right: 10px;
-    top: 0;
-    padding: 5px;
-    color: #383b3f;
+    top: -3px;
+    padding: 7px 7px 3px 3px;
+    color: #aaa5a5;
+    background: #e6e2e2;
+    border-radius: 50%;
+    transition: all linear .3s;
+}
+.card .icon-chat:hover {
+  background: #aaa5a5;
+  color: #e6e2e2;
 }
 .card .date, .card .wpm {
-    width: 50%;
     text-align: center;
     display: inline-block;
-}
-.card .posted-from {
-    color: #383b3f;
 }
 .card .post-title {
     text-decoration: none;

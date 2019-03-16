@@ -8,6 +8,20 @@ body {
   font-family: $main-font-family;
   overflow-x: hidden;
 }
+.main-header {
+  width: calc(100% - 300px);
+  border-bottom: 1px solid #cdc8c8;
+  box-sizing: border-box;
+  position: fixed;
+  background: white;
+  z-index: 111;
+  transition: all linear .4s;
+  padding: 11px 20px;
+}
+.main-header-content {
+  position: relative;
+  padding: 11px 10px 11px 20px;
+}
 .container {
   max-width: $site-width-large;
   margin: 0 auto;
@@ -25,36 +39,26 @@ body {
 }
 .category-list li a {
   color: #fff;
-  font-size: 25px;
+  font-size: 16px;
   text-decoration: none;
   display: block;
   width: 100%;
-  padding: 3px 50px;
+  padding: 3px;
   box-sizing: border-box;
 }
+
 .menu-item .nuxt-link-active {
-  background: $secondary-standout-color;
-  color: $secondary-dark-color;
+  background: #888080;
+  color: #2f3a40;
+  border-TOP-left-radius: 25rem;
+  border-bottom-left-radius: 25rem;
+  margin: 0 5px;
 }
-.menu-item .nuxt-link-active::after {
-  content: "";
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  background: $secondary-dark-color;
-  left: 26px;
-  top: 12px;
-  border-radius: 50%;
-}
-.category-list li a::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  background: $secondary-standout-color;
-  left: 26px;
-  top: 12px;
-  border-radius: 50%;
+.nuxt-link-active .icon-right-open::before {
+  transform: rotate(90deg);
+  right: 5px;
+  position: relative;
+  color: #414552;
 }
 .category-list-move-in {
   position: relative;
@@ -67,20 +71,21 @@ body {
   100% { left: 0 }
 }
 .main-container {
-  max-width: $site-width-large;
-  padding-top: 85px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  overflow-y: hidden;
-  overflow-x: hidden;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    position: relative;
+    left: 300px;
+    width: calc(100% - 300px);
+    transition: all linear .4s;
 }  
 .content {
-  max-width: $content-width;
+  max-width: 850px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 80px 10px 0 10px;
   float: left;
   box-sizing: border-box;
+  transition: all linear .4s;
 }
 .full-width-content {
   width: 100%;
@@ -91,6 +96,7 @@ body {
 .main-heading {
   color: $secondary-dark-color;
   font-size: 1.4rem;
+  padding-left: 10px;
 }
 .main-heading::before {
   width: 850px;
@@ -107,6 +113,11 @@ body {
   width: 300px;
 }
 /* bread crumbs */
+.seperator {
+  margin: 0px 6px 0px 10px;
+  position: relative;
+  color: #666a78;
+  top: 2px;}
 .crumb-link {
   color: $primary-medium-color;
   padding: 4px 0;

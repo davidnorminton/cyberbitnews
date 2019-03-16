@@ -49,13 +49,12 @@ export const article = {
         });
     },
     scroll() {
-      const img = document.getElementsByClassName("post-image"); 
-      let numbImgs = img.length;
+
       // infinite load articles
       window.onscroll = () => {
-        let scrolled = Math.ceil(document.documentElement.scrollTop + window.innerHeight);
+        let scrolled = Math.ceil(document.documentElement.scrollTop + window.innerHeight) - 259;
         let offset = document.documentElement.offsetHeight;
-
+        console.log(scrolled + '   ' + offset)
         if (scrolled >= offset) {
           this.bottom = true;
           this.page++;

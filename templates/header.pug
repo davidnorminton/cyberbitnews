@@ -1,61 +1,50 @@
-header
-  .container
-    .header-top
-      div(style='display: inline-block')
-        ul.hamburger(v-on:click='openMenu()')
-          li.bar.bar-1
-          li.bar.bar-2
-          li.bar.bar-3
-      nuxt-link(to='/')
-        h1
-          | CYBER
-          small bit
-          | NEWS
-      .settings    
-        i.icon-th(v-show="$store.state.view.mode === 'card'", 
-          style="color: grey", 
-          title="Card view selected")
-        i.icon-th.not-active(@click="$store.state.view.mode = 'card'",
-          v-show="$store.state.view.mode === 'list'",
-          title="Switch to card view")
-        i.icon-th-list(v-show="$store.state.view.mode === 'list'", 
-          style="color: grey",
-          title="List view selected")
-        i.icon-th-list.not-active(@click="$store.state.view.mode = 'list'", 
-          v-show="$store.state.view.mode === 'card'",
-          title="Switch to list view")  
-  
-      button#search_mobile_button.search_button.hide_desktop(@click='mobileSearchWindow')
-        i.icon-search
-      form.header-search(@submit.prevent="processSearch")
-        input.search-field(type='text', name='q'
-          placeholder='search site'
-          autocomplete='off'
-          autofocus='')
-        button.search_button(type='submit')
-          i.icon-search
-      #search-mobile
-        span#search-mobile-close X
-        form(@submit.prevent="mobileSearch")
-          input.search-field-mobile(type='text'
-            name='q'
-            placeholder='search site'
-            autocomplete='off'
-            autofocus='')
-#side-menu
+header#header         
   .menu-top
-    i#close-button.close-menu.icon-cancel(@click='closeMenu')
+    nuxt-link(to='/')
+      h1 CYBER
+        small bit
+        | NEWS
+    div(style='display: inline-block')
+      ul.hamburger(v-on:click='moveHeader()')
+        li.bar.bar-1
+        li.bar.bar-2
+        li.bar.bar-3
+  .settings    
+    i.icon-th(v-show="$store.state.view.mode === 'card'", 
+      style="color: grey", 
+      title="Card view selected")
+    i.icon-th.not-active(@click="$store.state.view.mode = 'card'",
+      v-show="$store.state.view.mode === 'list'",
+      title="Switch to card view")
+    i.icon-th-list(v-show="$store.state.view.mode === 'list'", 
+      style="color: grey",
+      title="List view selected")
+    i.icon-th-list.not-active(@click="$store.state.view.mode = 'list'", 
+      v-show="$store.state.view.mode === 'card'",
+      title="Switch to list view")        
   nav.header-menu
     ul.category-list   
       li.menu-item
-        nuxt-link.nav-link(to='/latest', @click.native='closeMenu', exact) latest
+        nuxt-link.nav-link(to='/latest', @click.native='closeMenu', exact) 
+          i.icon-right-open.cat-list
+          | latest
       li.menu-item
-        nuxt-link.nav-link(to='/category/developer', @click.native='closeMenu') developer
+        nuxt-link.nav-link(to='/category/developer', @click.native='closeMenu') 
+          i.icon-right-open.cat-list        
+          | developer
       li.menu-item
-        nuxt-link.nav-link(to='/category/tech', @click.native='closeMenu') tech
+        nuxt-link.nav-link(to='/category/tech', @click.native='closeMenu') 
+          i.icon-right-open.cat-list    
+          | tech
       li.menu-item
-        nuxt-link.nav-link(to='/category/linux', @click.native='closeMenu') linux
+        nuxt-link.nav-link(to='/category/linux', @click.native='closeMenu') 
+          i.icon-right-open.cat-list        
+          | linux
       li.menu-item
-        nuxt-link.nav-link(to='/category/infosec', @click.native='closeMenu') infosec                        
+        nuxt-link.nav-link(to='/category/infosec', @click.native='closeMenu') 
+          i.icon-right-open.cat-list        
+          | infosec                        
       li.menu-item
-        nuxt-link.nav-link(to='/website', @click.native='closeMenu') sites list
+        nuxt-link.nav-link(to='/website', @click.native='closeMenu') 
+          i.icon-right-open.cat-list        
+          | sites list

@@ -1,16 +1,9 @@
 <template lang="pug">
-  div  
+  div
     h3.main-heading All articles in "{{ $route.params.id }}"
-    div(v-if='included.length === 0')
-      h1 Loading ...
     .category-header(v-if="title !== null")
-      h3.intro
-      | A curated list provided by the following sites ... 
-      ul.sites-included
-        li(v-for='(site, index) in included', :key="index") 
-          nuxt-link(:to="'/website/' + site") {{ site }}
-    listView(:news="news", v-if="$store.state.view.mode === 'list'")
-    cardView(:news="news", v-else)
+    listView(:news="news", v-if="$store.state.view.mode === 'lists'")
+    cardView(:news="news", v-else-if)
 </template>  
 <script>
 import listView from '@/components/listView'
@@ -52,33 +45,11 @@ export default{
   watch: {
     '$route'() { 
       this.params = this.$route.params.id;
-      this.getDescription();
       this.getPage();
     }  
   },
-  methods: {
-
-    async getDescription() {
-        await this.$axios.$get(this.domain + "/static/data/categories.json")
-        .then((response) => {
-
-          if([...response].length === 0) {
-            this.$router.push("/404")
-          }
-
-          let cat = this.$route.params.id;
-          this.title = response[0][cat].title;
-          this.included = response[0][cat].included;
-
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  },
   mounted() {
     this.$nextTick(() => {
-      this.getDescription();
       this.getPage();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.scroll();

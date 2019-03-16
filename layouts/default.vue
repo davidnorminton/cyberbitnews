@@ -1,33 +1,25 @@
 <template lang="pug">
   #app
-    TopHeader
-    .index-container(v-if="$route.path === '/'") 
-      transition(name='outIn')
-        div(:key="$route.params.id")
+    TopHeader  
+    .main-container
+      .main-header(:key="$route.params.id")
+          miniSearch
           breadCrumbs
-          nuxt      
-    .main-container(v-if="$route.path !== '/'")
-      .content(v-if="$store.state.view.mode === 'list'")
+      .content
         transition(name='outIn')
-          div(:key="$route.params.id")
-            breadCrumbs
-            nuxt
-      .full-width-content(v-else="$store.state.view.mode === 'card'")
-        transition(name='outIn')
-          div(:key="$route.params.id")
-            breadCrumbs
-            nuxt
-      aSide(v-if="$store.state.view.mode === 'list'")
+          nuxt
 </template>
 <script>
 import TopHeader from "@/components/header"
 import breadCrumbs from "@/components/breadcrumbs"
 import aSide from "@/components/aside"
+import miniSearch from "@/components/miniSearchBar"
 
 export default {
   components: {
     TopHeader,
     breadCrumbs,
+    miniSearch,
     aSide
   }
 }

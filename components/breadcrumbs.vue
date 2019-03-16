@@ -3,7 +3,7 @@
   span(v-for='(route, index) in routes', :key='index')  
     router-link.crumb-link(v-if='index < routes.length -1', :to='route.path') {{ route.name }}
     span.crumb-non-link(v-if='index == routes.length -1') {{ route.name }}
-    i.icon-right-open(v-if="index < routes.length - 1") 
+    i.seperator(v-if="index < routes.length - 1") / 
 </template>
 <script>
 export default {

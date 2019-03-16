@@ -1,26 +1,25 @@
 header {
   position: fixed;
   box-sizing: border-box;
-  width: 100%;
-  background: #186491;
-  padding: 10px 15px;
   z-index: 1;
-  box-shadow: 0px 3px 30px $primary-light-color;
-  background-size: 4px 4px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100%;
+  background: #414552;
+  z-index: 1;
+  box-sizing: border-box;
+  transition: all linear .4s;
 }
 .header-top {
   width: 100%;
 }
-
-.header-search { 
-  position: absolute;
-  right: 5px;
-  top: 0;
- }
 .header-menu { 
   text-align: center;
   position: relative;
-  top: 55px;
+  top: 20px;
   width: 100%;
   overflow: -webkit-paged-y;
 }
@@ -28,15 +27,15 @@ header {
 header a h1 {
   color: #fff;
   font-family: 'Bitter', serif;
-  font-size: 20px;
+  font-size: 18px;
   display: inline-block;
   margin: 0;
   position: absolute;
-  left: 60px;
-  top: 6px;
+  left: 10px;
+  top: 10px;
 }
 header a h1 small {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: $secondary-dark-color;
   background: $secondary-standout-color;
   border-radius: 50%;
@@ -47,16 +46,17 @@ header a h1 small {
   display: inline-block;
   margin: 0;
   padding: 0;
-  margin-top: 8px;
-  position: relative;
-  left: 10px;
+  position: absolute;
+  right: 13px;
+  top: 13px;
   cursor: pointer;
 }
 .menu-top {
   display: block;
   width: 100%;
-  height: 30px;
-  border-bottom: $main-background-color;
+  height: 40px;
+  border-bottom: 1px solid#35373e;
+  box-shadow: 0 1px 1px -1px rgba(185, 179, 179, 0.75);
   text-align: right;
 }
 .close-menu {
@@ -69,25 +69,13 @@ header a h1 small {
   color: #fff;
 }
 .bar {
-  width: 25px;
-  margin-bottom: 3px;
-  border: 2px solid #fff;
-  background: #fff;
-  border-radius: 25%;
+  width: 20px;
+  margin-bottom: 0.1rem;
+  border: 2px solid #888080;
 }
-#side-menu {
-  position: fixed;
-  left: -300px;
+.cat-list {
+  color: #fff;
   top: 0;
-  bottom: 0;
-  width: 300px;
-  height: 100%;
-  background: $secondary-dark-color;
-  opacity: 0.97;
-  z-index: 1;
-  padding: 20px 0;
-  box-sizing: border-box;
-  transition: all 0.4s ease;
 }
 .moveInUp-enter-active{
   animation: fadeIn 2s ease-in;
@@ -107,54 +95,19 @@ header a h1 small {
   float: right;
   margin: 7px 0 0 10px;
 }
-.search_button {
-  border: 2px solid transparent;
-  background: transparent;
-  color: $secondary-dark-color;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 3px;
-  font-size: 1.1rem;
-}
 .settings {
   position: absolute;
-  right: 322px;
   bottom: 0;
-  background: #434d53;
-  border-radius: 25px;
+  width: 100%;
+  background: #436b86;
   padding: 9px;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: #fff;
+  box-sizing: border-box;
+  text-align: right;
 }
 .settings .not-active {
   cursor: pointer;
-}
-.search-field {
-  cursor: text;
-  width: 285px;
-  color: $primary-medium-color;
-  display: inline-block;
-  border: 1px solid transparent;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  line-height: 2rem;
-  padding: 0 .5rem 0 1rem;;
-  outline: none;
-  transition: all .2s ease;
-  height: 30px;
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $primary-light-color;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $primary-light-color;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: $primary-light-color;
 }
 #search_mobile_button .icon-search {
   color: #fff;

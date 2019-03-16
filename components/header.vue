@@ -1,28 +1,58 @@
 <template lang="pug">
-  #peace
-    include ../templates/header.pug
+  include ../templates/header.pug
 </template>
 
 <script>
 export default {
-  name: 'main-header',
+  name: 'mainHeader',
   data: function(){
     return {
-      menuVisible: 0,
+      menuVisible: 1,
       menuWidth: 300,
-      query: ''
+      query: '',
     }  
   },
+  computed: {
+    menu() {
+      return document.getElementById("header");
+    },
+    body() {
+      return document.querySelector(".main-container"); 
+    },
+    mainHeader() {
+      return document.querySelector(".main-header");
+    },
+    content() {
+      return document.querySelector(".content")
+    }
+  },
   methods: {
+    moveHeader() {
+
+      if(!this.menuVisible) {
+        this.openMenu(); 
+        this.menuVisible = 1;
+      } else {
+        this.closeMenu();   
+        this.menuVisible = 0; 
+    
+      }  
+    },
     openMenu() {
-      const menu = document.getElementById("side-menu");      
-      if(!this.menuVisible) menu.style.left = '0';
-      this.menuVisible = 1;
+      this.menu().style.left = '0';
+      this.body().style.left = '300px';
+      this.body().style.width = 'calc(100% - 300px)';
+      this.mainHeader().style.width = 'calc(100% - 300px)'
+      this.content().style.maxWidth = '850px'
     },
     closeMenu() {
-      const menu = document.getElementById("side-menu");
-      if(this.menuVisible) menu.style.left = `-${this.menuWidth}px`;
-      this.menuVisible = 0;
+      console.log(menu)
+      const menu = this.menu();
+      menu.style.left = '-255px';
+      this.body().style.left = '45px';
+      this.body().style.width = 'calc(100% - 45px)';
+      this.mainHeader().style.width = 'calc(100% - 45px)';
+      this.content().style.maxWidth = 'none';
     },
     processSearch() {
       let input = document.querySelector('.search-field').value;
@@ -38,6 +68,12 @@ export default {
       searchBox.style.display = 'none';
       this.$router.push({ name: 'search', params: { id: input }});
       document.querySelector('.search-field').value = 0;
+    }
+  },
+  mounted() {
+    if(!this.$route.params) {
+      this.closeMenu();
+      this.menuVisible = 0;
     }
   }
 }

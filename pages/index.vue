@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  .main-container
     .top-banner
       .container.padding-top-140
         .top-banner-text 
@@ -48,13 +48,25 @@ export default{
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.main-container {
+  width: 100%;
+  left: 0;
+}
+.main-header {
+  border: 0;
+}
+.content {
+  width: 100%;
+  max-width: 1160px;
+}
 .top-banner {
   width: 100%;
   height: 300px;
 }
 header {
   box-shadow: none;
+  left: -225px;
 }
 .top-banner-text {
     color: #334d5d;

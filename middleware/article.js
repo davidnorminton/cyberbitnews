@@ -52,7 +52,7 @@ export const article = {
 
       // infinite load articles
       window.onscroll = () => {
-        let scrolled = Math.ceil(document.documentElement.scrollTop + window.innerHeight) - 259;
+        let scrolled = Math.ceil(document.documentElement.scrollTop + window.innerHeight);
         let offset = document.documentElement.offsetHeight;
         console.log(scrolled + '   ' + offset)
         if (scrolled >= offset) {

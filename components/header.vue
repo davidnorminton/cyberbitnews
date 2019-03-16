@@ -39,20 +39,18 @@ export default {
       }  
     },
     openMenu() {
-      this.menu().style.left = '0';
-      this.body().style.left = '300px';
-      this.body().style.width = 'calc(100% - 300px)';
-      this.mainHeader().style.width = 'calc(100% - 300px)'
-      this.content().style.maxWidth = '850px'
+      this.menu.style.left = '0'
+      this.body.style.left = '300px';
+      this.body.style.width = 'calc(100% - 300px)';
+      this.mainHeader.style.width = 'calc(100% - 300px)'
+      this.content.style.width = '850px'
     },
     closeMenu() {
-      console.log(menu)
-      const menu = this.menu();
-      menu.style.left = '-255px';
-      this.body().style.left = '45px';
-      this.body().style.width = 'calc(100% - 45px)';
-      this.mainHeader().style.width = 'calc(100% - 45px)';
-      this.content().style.maxWidth = 'none';
+      this.menu.style.left = '-255px';
+      this.body.style.left = '45px';
+      this.body.style.width = 'calc(100% - 45px)';
+      this.mainHeader.style.width = 'calc(100% - 45px)';
+      this.content.style.width = 'none';
     },
     processSearch() {
       let input = document.querySelector('.search-field').value;

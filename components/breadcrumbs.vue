@@ -1,5 +1,5 @@
 <template lang="pug">
-.breadcrumbs(v-if="$route.path !== '/'")
+.breadcrumbs
   span(v-for='(route, index) in routes', :key='index')  
     router-link.crumb-link(v-if='index < routes.length -1', :to='route.path') {{ route.name }}
     span.crumb-non-link(v-if='index == routes.length -1') {{ route.name }}

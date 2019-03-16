@@ -29,7 +29,7 @@ export default {
   }    
 }
 </script>
-<style lang="scss">
+<style>
 .list-cats {
     list-style: none;
 }

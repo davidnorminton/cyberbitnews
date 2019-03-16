@@ -58,7 +58,7 @@ export default{
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .banner {
   width: calc(100% - 20px);
   height: auto;

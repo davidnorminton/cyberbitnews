@@ -105,7 +105,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .comments {
     margin-top: 40px;
 }

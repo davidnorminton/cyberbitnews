@@ -48,7 +48,9 @@ export default {
       this.body.style.left = '45px';
       this.body.style.width = 'calc(100% - 45px)';
       this.mainHeader.style.width = 'calc(100% - 45px)';
-      this.content.style.maxWidth = 'none';
+      if(this.$store.state.view.mode === 'card') {
+          this.content.style.maxWidth = 'none';
+      }    
     },
     processSearch() {
       let input = document.querySelector('.search-field').value;

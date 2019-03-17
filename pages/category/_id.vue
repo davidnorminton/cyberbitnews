@@ -2,8 +2,8 @@
   div
     h3.main-heading All articles in "{{ $route.params.id }}"
     .category-header(v-if="title !== null")
-    listView(:news="news", v-if="$store.state.view.mode === 'lists'")
-    cardView(:news="news", v-else-if)
+    listView(:news="news", v-if="$store.state.view.mode === 'list'")
+    cardView(:news="news", v-else-if="$store.state.view.mode === 'card'")
 </template>  
 <script>
 import listView from '@/components/listView'

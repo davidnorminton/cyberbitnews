@@ -5,7 +5,7 @@
     h3.heading.main-heading Latest articles
     transition(name='outIn')
       cardView(:news="news", v-if="$store.state.view.mode === 'card'")
-      listView(:news="news", v-else)
+      listView(:news="news", v-else-if="$store.state.view.mode === 'list'")
 </template>
 
 <script>

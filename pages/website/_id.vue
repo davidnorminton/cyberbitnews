@@ -13,7 +13,7 @@
                   | READ MORE
       h3.main-heading(v-if="$store.state.view.mode === 'list'") Latest news from {{ site }}
       listView(:news="news", v-if="$store.state.view.mode === 'list'")
-      cardView(:news="news", v-else)
+      cardView(:news="news", v-else="$store.state.view.mode === 'card'")
 </template>  
 <script>
 import {article} from '@/middleware/article'

@@ -13,38 +13,38 @@ header#header
     i.icon-th(v-show="$store.state.view.mode === 'card'", 
       style="color: grey", 
       title="Card view selected")
-    i.icon-th.not-active(@click="$store.state.view.mode = 'card'",
+    i.icon-th.not-active(@click="$store.commit('view/selectCard')",
       v-show="$store.state.view.mode === 'list'",
       title="Switch to card view")
     i.icon-th-list(v-show="$store.state.view.mode === 'list'", 
       style="color: grey",
       title="List view selected")
-    i.icon-th-list.not-active(@click="$store.state.view.mode = 'list'", 
+    i.icon-th-list.not-active(@click="$store.commit('view/selectList')", 
       v-show="$store.state.view.mode === 'card'",
       title="Switch to list view")        
   nav.header-menu
     ul.category-list   
       li.menu-item
-        nuxt-link.nav-link(to='/', @click.native='closeMenu', exact) 
+        nuxt-link.nav-link(to='/', exact) 
           i.icon-right-open.cat-list
           | latest
       li.menu-item
-        nuxt-link.nav-link(to='/category/developer', @click.native='closeMenu') 
+        nuxt-link.nav-link(to='/category/developer') 
           i.icon-right-open.cat-list        
           | developer
       li.menu-item
-        nuxt-link.nav-link(to='/category/tech', @click.native='closeMenu') 
+        nuxt-link.nav-link(to='/category/tech') 
           i.icon-right-open.cat-list    
           | tech
       li.menu-item
-        nuxt-link.nav-link(to='/category/linux', @click.native='closeMenu') 
+        nuxt-link.nav-link(to='/category/linux') 
           i.icon-right-open.cat-list        
           | linux
       li.menu-item
-        nuxt-link.nav-link(to='/category/infosec', @click.native='closeMenu') 
+        nuxt-link.nav-link(to='/category/infosec') 
           i.icon-right-open.cat-list        
           | infosec                        
       li.menu-item
-        nuxt-link.nav-link(to='/website', @click.native='closeMenu') 
+        nuxt-link.nav-link(to='/website') 
           i.icon-right-open.cat-list        
           | sites list

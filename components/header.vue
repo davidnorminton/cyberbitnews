@@ -7,7 +7,6 @@ export default {
   name: 'mainHeader',
   data: function(){
     return {
-      menuVisible: 1,
       menuWidth: 300,
       query: '',
     }  
@@ -29,13 +28,12 @@ export default {
   methods: {
     moveHeader() {
 
-      if(!this.menuVisible) {
+      if(!this.$store.state.view.menuVisible) {
         this.openMenu(); 
-        this.menuVisible = 1;
+        this.$store.commit('view/openMenu');
       } else {
-        this.closeMenu();   
-        this.menuVisible = 0; 
-    
+        this.closeMenu();
+        this.$store.commit('view/closeMenu');    
       }  
     },
     openMenu() {
@@ -43,14 +41,14 @@ export default {
       this.body.style.left = '300px';
       this.body.style.width = 'calc(100% - 300px)';
       this.mainHeader.style.width = 'calc(100% - 300px)'
-      this.content.style.width = '850px'
+      this.content.style.maxWidth = '920px'
     },
     closeMenu() {
       this.menu.style.left = '-255px';
       this.body.style.left = '45px';
       this.body.style.width = 'calc(100% - 45px)';
       this.mainHeader.style.width = 'calc(100% - 45px)';
-      this.content.style.width = 'none';
+      this.content.style.maxWidth = 'none';
     },
     processSearch() {
       let input = document.querySelector('.search-field').value;
@@ -69,10 +67,6 @@ export default {
     }
   },
   mounted() {
-    if(!this.$route.params) {
-      this.closeMenu();
-      this.menuVisible = 0;
-    }
   }
 }
 </script>

@@ -6,11 +6,6 @@ export const article = {
       api: 'https://api.cyberbitnews.com'
     }
   },
-  computed: {
-    state : () => {
-      return this.$store.state.view.mode
-    }
-  },
   methods: {
     enter() {
       this.title = this.$route.params.id;
@@ -54,7 +49,7 @@ export const article = {
       window.onscroll = () => {
         let scrolled = Math.ceil(document.documentElement.scrollTop + window.innerHeight);
         let offset = document.documentElement.offsetHeight;
-        console.log(scrolled + '   ' + offset)
+
         if (scrolled >= offset) {
           this.bottom = true;
           this.page++;

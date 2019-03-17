@@ -2,9 +2,9 @@
   #app
     TopHeader  
     .main-container
-      .main-header(:key="$route.params.id")
+      .main-header
           miniSearch
-          breadCrumbs
+          breadCrumbs(:key="$route.params.id")
       .content
         transition(name='outIn')
           nuxt

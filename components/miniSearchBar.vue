@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 .header-search { 
   position: absolute;
-  right: 5px;
+  right: 78px;
   top: 4px;
 }
 .search-field {
@@ -41,6 +41,8 @@ export default {
     padding: 0 .5rem 0 1rem;
     outline: none;
     transition: all .2s ease;
+    position: relative;
+    bottom: 1px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: lightgrey;

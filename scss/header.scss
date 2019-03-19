@@ -97,14 +97,16 @@ header a h1 small {
 }
 .settings {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #436b86;
-  padding: 9px;
+  bottom: 3px;
+  right: 6px;
+  width: auto;
+  padding: 7px 5px 3px 5px;
   font-size: 1.2rem;
-  color: #fff;
+  color: #cdc8c8;
   box-sizing: border-box;
   text-align: right;
+  border: 1px solid #cdc8c8;
+  border-radius: 5px;
 }
 .settings .not-active {
   cursor: pointer;
@@ -178,4 +180,7 @@ header a h1 small {
   .header-menu{
     top: 50px;
   }
+}
+.favicon {
+  border-radius: 5px;
 }

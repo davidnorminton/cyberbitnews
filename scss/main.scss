@@ -48,11 +48,10 @@ body {
 }
 
 .menu-item .nuxt-link-active {
-  background: #888080;
+  background: #dacecb;
   color: #2f3a40;
-  border-TOP-left-radius: 25rem;
-  border-bottom-left-radius: 25rem;
-  margin: 0 5px;
+  border-left: 4px solid orange;
+  box-sizing: border-box;
 }
 .nuxt-link-active .icon-right-open::before {
   transform: rotate(90deg);
@@ -94,7 +93,6 @@ body {
 .main-heading {
   color: $secondary-dark-color;
   font-size: 1.4rem;
-  padding-left: 10px;
 }
 .main-heading::before {
   width: 850px;

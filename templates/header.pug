@@ -8,20 +8,7 @@ header#header
       ul.hamburger(v-on:click='moveHeader()')
         li.bar.bar-1
         li.bar.bar-2
-        li.bar.bar-3
-  .settings    
-    i.icon-th(v-show="$store.state.view.mode === 'card'", 
-      style="color: grey", 
-      title="Card view selected")
-    i.icon-th.not-active(@click="$store.commit('view/selectCard')",
-      v-show="$store.state.view.mode === 'list'",
-      title="Switch to card view")
-    i.icon-th-list(v-show="$store.state.view.mode === 'list'", 
-      style="color: grey",
-      title="List view selected")
-    i.icon-th-list.not-active(@click="$store.commit('view/selectList')", 
-      v-show="$store.state.view.mode === 'card'",
-      title="Switch to list view")        
+        li.bar.bar-3     
   nav.header-menu
     ul.category-list   
       li.menu-item
@@ -31,19 +18,44 @@ header#header
       li.menu-item
         nuxt-link.nav-link(to='/category/developer') 
           i.icon-right-open.cat-list        
-          | developer
+          span(@click="subCatOpenSites('developer')") developer
+          ul(v-if="developer === true")
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=freecodecamp.com&alt=feed"> freecodecamp
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=smashingmagazine.com&alt=feed"> smashingmagazine
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=medium.com&alt=feed"> dailyjs
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=gitconnected.com&alt=feed"> gitconnected
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=uxplanet.org&alt=feed"> uxplanet
+        
       li.menu-item
         nuxt-link.nav-link(to='/category/tech') 
           i.icon-right-open.cat-list    
-          | tech
+          span(@click="subCatOpenSites('tech')") tech
+          ul(v-if="tech === true")
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=techspot.com&alt=feed"> techspot
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=thenextweb.com&alt=feed"> thenextweb
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=arstechnica.com&alt=feed"> arstechnica
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=gitconnected.com&alt=feed"> gitconnected
       li.menu-item
         nuxt-link.nav-link(to='/category/linux') 
           i.icon-right-open.cat-list        
-          | linux
+          span(@click="subCatOpenSites('linux')") linux
+          ul(v-if="linux === true")
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=tecmint.com&alt=feed"> tecmint
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=linuxuprising.com&alt=feed"> linuxuprising
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=omgubuntu.com&alt=feed"> omgubuntu
       li.menu-item
         nuxt-link.nav-link(to='/category/infosec') 
           i.icon-right-open.cat-list        
-          | infosec                        
+          span(@click="subCatOpenSites('infosec')") infosec
+          ul(v-if="infosec === true")
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=thehackernews.com&alt=feed"> thehackernews
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=welivesecurity.com&alt=feed"> welivesecurity
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=rapid7.com&alt=feed"> rapid7
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=threatpost.com&alt=feed"> threatpost
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=securityledger.org&alt=feed"> securityledger
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=scmagazine.com&alt=feed"> scmagazine
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=hackread.com&alt=feed"> hackread
+            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=offensive-security.com&alt=feed"> offensive-security                                
       li.menu-item
         nuxt-link.nav-link(to='/website') 
           i.icon-right-open.cat-list        

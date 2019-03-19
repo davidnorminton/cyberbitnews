@@ -9,6 +9,10 @@ export default {
     return {
       menuWidth: 300,
       query: '',
+      developer: true,
+      infosec: false,
+      tech: false,
+      linux: false
     }  
   },
   computed: {
@@ -35,6 +39,39 @@ export default {
         this.closeMenu();
         this.$store.commit('view/closeMenu');    
       }  
+    },
+    subCatOpenSites(sub) {
+
+        switch(sub) {
+            case 'developer':
+                if(this.developer === true) {
+                  this.developer = false;
+                } else {
+                  this.developer = true
+                }
+                break;
+            case 'tech':
+                if(this.tech === true) {
+                  this.tech = false;
+                } else {
+                  this.tech = true
+                }                
+                break;
+            case 'linux':
+                if(this.linux === true) {
+                  this.linux = false;
+                } else {
+                  this.linux = true
+                }                
+                break;
+            case 'infosec':
+                if(this.infosec === true) {
+                  this.infosec = false;
+                } else {
+                  this.infosec = true
+                } 
+                break;            
+        }  
     },
     openMenu() {
       this.menu.style.left = '0'

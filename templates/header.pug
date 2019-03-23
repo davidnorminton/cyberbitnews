@@ -16,46 +16,41 @@ header#header
           i.icon-right-open.cat-list
           | latest
       li.menu-item
-        nuxt-link.nav-link(to='/category/developer') 
-          i.icon-right-open.cat-list        
-          span(@click="subCatOpenSites('developer')") developer
-          ul(v-if="developer === true")
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=freecodecamp.com&alt=feed"> freecodecamp
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=smashingmagazine.com&alt=feed"> smashingmagazine
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=medium.com&alt=feed"> dailyjs
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=gitconnected.com&alt=feed"> gitconnected
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=uxplanet.org&alt=feed"> uxplanet
-        
+        i.icon-right-open.cat-list(@click="subCatOpenSites('developer')")      
+        nuxt-link(to="/category/developer") developer
+        ul(v-if="developer === true")
+          li(v-for="site in subMenu.Developer", v-bind:key="site.name")
+            nuxt-link(:to="'/website/ + site.name'", class="submenu")
+              img(class="favicon", 
+                :src="'https://www.google.com/s2/favicons?domain=' + site.link + '&alt=feed'")
+              span {{ site.name }}
       li.menu-item
-        nuxt-link.nav-link(to='/category/tech') 
-          i.icon-right-open.cat-list    
-          span(@click="subCatOpenSites('tech')") tech
-          ul(v-if="tech === true")
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=techspot.com&alt=feed"> techspot
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=thenextweb.com&alt=feed"> thenextweb
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=arstechnica.com&alt=feed"> arstechnica
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=gitconnected.com&alt=feed"> gitconnected
+        i.icon-right-open.cat-list(@click="subCatOpenSites('tech')")      
+        nuxt-link(to="/category/tech") tech
+        ul(v-if="tech === true")
+          li(v-for="site in subMenu.Tech", v-bind:key="site.name")
+            nuxt-link(:to="'/website/ + site.name'", class="submenu")
+              img(class="favicon", 
+                :src="'https://www.google.com/s2/favicons?domain=' + site.link + '&alt=feed'")
+              span {{ site.name }}
       li.menu-item
-        nuxt-link.nav-link(to='/category/linux') 
-          i.icon-right-open.cat-list        
-          span(@click="subCatOpenSites('linux')") linux
-          ul(v-if="linux === true")
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=tecmint.com&alt=feed"> tecmint
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=linuxuprising.com&alt=feed"> linuxuprising
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=omgubuntu.com&alt=feed"> omgubuntu
+        i.icon-right-open.cat-list(@click="subCatOpenSites('linux')")      
+        nuxt-link(to="/category/linux") linux
+        ul(v-if="linux === true")
+          li(v-for="site in subMenu.Linux", v-bind:key="site.name")
+            nuxt-link(:to="'/website/ + site.name'", class="submenu")
+              img(class="favicon", 
+                :src="'https://www.google.com/s2/favicons?domain=' + site.link + '&alt=feed'")
+              span {{ site.name }}
       li.menu-item
-        nuxt-link.nav-link(to='/category/infosec') 
-          i.icon-right-open.cat-list        
-          span(@click="subCatOpenSites('infosec')") infosec
-          ul(v-if="infosec === true")
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=thehackernews.com&alt=feed"> thehackernews
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=welivesecurity.com&alt=feed"> welivesecurity
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=rapid7.com&alt=feed"> rapid7
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=threatpost.com&alt=feed"> threatpost
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=securityledger.org&alt=feed"> securityledger
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=scmagazine.com&alt=feed"> scmagazine
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=hackread.com&alt=feed"> hackread
-            li <img class="favicon" src="https://www.google.com/s2/favicons?domain=offensive-security.com&alt=feed"> offensive-security                                
+        i.icon-right-open.cat-list(@click="subCatOpenSites('infosec')")      
+        nuxt-link(to="/category/infosec") infosec
+        ul(v-if="infosec === true")
+          li(v-for="site in subMenu.Infosec", v-bind:key="site.name")
+            nuxt-link(:to="'/website/ + site.name'", class="submenu")
+              img(class="favicon", 
+                :src="'https://www.google.com/s2/favicons?domain=' + site.link + '&alt=feed'")
+              span {{ site.name }}                                                        
       li.menu-item
         nuxt-link.nav-link(to='/website') 
           i.icon-right-open.cat-list        

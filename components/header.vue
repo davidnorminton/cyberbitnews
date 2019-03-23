@@ -12,7 +12,101 @@ export default {
       developer: false,
       infosec: false,
       tech: false,
-      linux: false
+      linux: false,
+      subMenu: {
+          Developer: [
+            {
+              name: 'freecodecamp',
+              link: 'freecodecamp.com'
+            },
+            {
+              name: 'smashingmagazine',
+              link: 'smashingmagazine.com'
+            },
+            {
+              name: 'dailyjs',
+              link: 'medium.com'
+            },
+            {
+              name: 'gitconnected',
+              link: 'gitconnected.com'
+            },
+            {
+              name: '	uxplanet',
+              link: '	uxplanet.org'
+            }
+          ],
+          Tech: [
+            {
+              name: 'techspot',
+              link: 'techspot.com'
+            },
+            {
+              name: 'thenextweb',
+              link: 'thenextweb.com'
+            },
+            {
+              name: 'arstechnica',
+              link: 'arstechnica.com'
+            }
+          ],
+          Linux: [
+            {
+              name: 'tecmint',
+              link: 'tecmint.com'
+            },
+            {
+              name: 'linuxuprising',
+              link: 'linuxuprising.com'
+            },
+            {
+              name: 'omgubuntu',
+              link: 'omgubuntu.com'
+            }
+          ],
+          Infosec: [
+            {
+              name: 'thehackernews',
+              link: 'thehackernews.com'
+            },
+            {
+              name: 'welivesecurity',
+              link: 'welivesecurity.com'
+            },
+            {
+              name: 'rapid7',
+              link: 'rapid7.com'
+            },
+            {
+              name: 'threatpost',
+              link: 'threatpost.com'
+            },
+            {
+              name: '	securityledger',
+              link: 'securityledger.org'
+            },
+            {
+              name: 'scmagazine',
+              link: 'scmagazine.com'
+            },
+            {
+              name: 'hackread',
+              link: 'hackread.com'
+            },
+            {
+              name: 'offensive-security',
+              link: 'offensive-security.com'
+            },
+            {
+              name: 'gitconnected',
+              link: 'gitconnected.com'
+            },
+            {
+              name: '	uxplanet',
+              link: '	uxplanet.org'
+            }                        
+          ]
+      }
     }  
   },
   computed: {
@@ -41,37 +135,7 @@ export default {
       }  
     },
     subCatOpenSites(sub) {
-
-        switch(sub) {
-            case 'developer':
-                if(this.developer === true) {
-                  this.developer = false;
-                } else {
-                  this.developer = true
-                }
-                break;
-            case 'tech':
-                if(this.tech === true) {
-                  this.tech = false;
-                } else {
-                  this.tech = true
-                }                
-                break;
-            case 'linux':
-                if(this.linux === true) {
-                  this.linux = false;
-                } else {
-                  this.linux = true
-                }                
-                break;
-            case 'infosec':
-                if(this.infosec === true) {
-                  this.infosec = false;
-                } else {
-                  this.infosec = true
-                } 
-                break;            
-        }  
+       this[sub] = this[sub]? false: true; 
     },
     openMenu() {
       this.menu.style.left = '0'

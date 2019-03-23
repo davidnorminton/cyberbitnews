@@ -41,16 +41,13 @@ body {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
-  display: block;
-  width: 100%;
+  display: inline;
   padding: 3px;
   box-sizing: border-box;
 }
 
 .menu-item .nuxt-link-active {
-  background: #dacecb;
-  color: #2f3a40;
-  border-left: 4px solid orange;
+  color: #fff;
   box-sizing: border-box;
 }
 .nuxt-link-active .icon-right-open::before {

@@ -165,7 +165,9 @@ header a h1 small {
     display: none;
   }
 }
-
+.submenu span{
+  font-size: 0.87rem;
+}
 /* mobile */
 @media only screen and ( max-width: 400px ) {
   header a h1 {
@@ -183,4 +185,9 @@ header a h1 small {
 }
 .favicon {
   border-radius: 5px;
+  position: relative;
+  top: 3px;
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
 }

@@ -9,7 +9,7 @@ export default {
     return {
       menuWidth: 300,
       query: '',
-      developer: true,
+      developer: false,
       infosec: false,
       tech: false,
       linux: false

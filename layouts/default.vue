@@ -7,13 +7,13 @@
           breadCrumbs(:key="$route.params.id")
           .settings    
             i.icon-th(v-show="$store.state.view.mode === 'card'", 
-              style="color: grey", 
+              style="color: #cdc8c8", 
               title="Card view selected")
             i.icon-th.not-active(@click="$store.commit('view/selectCard')",
               v-show="$store.state.view.mode === 'list'",
               title="Switch to card view")
             i.icon-th-list(v-show="$store.state.view.mode === 'list'", 
-              style="color: grey",
+              style="color: #cdc8c8",
               title="List view selected")
             i.icon-th-list.not-active(@click="$store.commit('view/selectList')", 
               v-show="$store.state.view.mode === 'card'",

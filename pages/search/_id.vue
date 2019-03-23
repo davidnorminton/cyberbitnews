@@ -30,11 +30,13 @@ export default{
   },
   watch: {
     '$route'() { 
+      this.$store.dispatch('news/resetState');
       this.params = this.$route.params.id;
       this.getPage();
     }  
   },
   mounted() {
+    this.$store.dispatch('news/resetState');
     this.getPage();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.scroll();

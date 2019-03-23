@@ -23,7 +23,7 @@ export const article = {
         .then(response => {
           let l = [...response].length;
           for (let i = 0; i < l; i++) {
-            this.news.push(response[i]);
+            this.$store.commit('news/addToNewsList', response[i]);
           }
           // when the user reaches the bottom of the page the scrolled function
           // is used to request the next pages data.
@@ -33,7 +33,6 @@ export const article = {
           // remove the page loading notification
           const placeholder = document.getElementById('loading');
           // check if the news array has changed
-
           if(placeholder) {
             placeholder.parentNode.removeChild(placeholder);
           }

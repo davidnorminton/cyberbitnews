@@ -1,6 +1,6 @@
 <template lang="pug">
 .list(:key='$route.params.id')
-  article.card(v-for='(article, index) in news', :key='index')
+  article.card(v-for='(article, index) in this.$store.state.news.news', :key='index')
     .post
       .post-image-wrap
         .post-image(:style="{\

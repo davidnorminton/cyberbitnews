@@ -55,11 +55,13 @@ export default{
   },
   watch: {
     '$route'() { 
+      this.$store.dispatch('news/resetState');
       this.params = this.$route.params.id;
       this.getPage();
     }  
   },
   mounted() {
+    this.$store.dispatch('news/resetState');
     this.getPage();
     this.scroll();
   },
@@ -71,7 +73,7 @@ export default{
           let data_length = data.length;
 
           for(let i = 0; i < data_length; i++) {
-              this.news.push(response[1][i]);
+            this.$store.commit('news/addToNewsList', response[1][i]);
           }
 
           this.site = response[0][0].site;

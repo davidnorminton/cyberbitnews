@@ -134,8 +134,17 @@ export default {
         this.$store.commit('view/closeMenu');    
       }  
     },
-    subCatOpenSites(sub) {
-       this[sub] = this[sub]? false: true; 
+    subCatOpenSites(sub, event) {
+
+       if(this[sub] === false) {
+         event.target.classList.add('rotateArrow');
+         this[sub] = true;
+       } else {
+         if(event.target.classList.contains('rotateArrow')) {
+           event.target.classList.remove('rotateArrow')
+         }
+         this[sub] = false;
+       }
     },
     openMenu() {
       this.menu.style.left = '0'

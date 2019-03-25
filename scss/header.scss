@@ -68,14 +68,41 @@ header a h1 small {
   right: 10px;
   color: #fff;
 }
-.bar {
-  width: 20px;
-  margin-bottom: 0.1rem;
-  border: 2px solid #888080;
+.icon-menu {
+  position: absolute;
+  top: 6px;
+  color: white;
+  left: 255px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.icon-menu:hover {
+  background: lightgray;
+  border-radius: 50%;
+  color: #414552;
+  animation: pulse 2s infinite;
+  box-shadow: 1px -1px 14px 2px lightgrey;
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.icon-flash {
+  color: yellow;
 }
 .cat-list {
   color: #fff;
   top: 0;
+}
+.icon-right-open:hover, .rotateArrow {
+  transform: rotate(90deg);
 }
 .moveInUp-enter-active{
   animation: fadeIn 2s ease-in;

@@ -128,6 +128,9 @@ body {
   position: relative;
   top: 2px;
   font-size: 0.8rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all linear .3s;
 }
 #loading > * {
   overflow: hidden;

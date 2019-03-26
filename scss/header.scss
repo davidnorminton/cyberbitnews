@@ -17,11 +17,9 @@ header {
   width: 100%;
 }
 .header-menu { 
-  text-align: center;
-  position: relative;
-  top: 20px;
-  width: 100%;
-  overflow: -webkit-paged-y;
+  overflow-y: auto;
+  height: 100%;
+  padding-top: 20px;
 }
 
 header a h1 {
@@ -82,6 +80,21 @@ header a h1 small {
   color: #414552;
   animation: pulse 2s infinite;
   box-shadow: 1px -1px 14px 2px lightgrey;
+}
+.icon-fire {
+  color: #e13c3c;
+  font-size: 12px;
+  position: relative;
+  bottom: 2px;
+  margin-right: 10px;
+}
+.icon-globe {
+  color: #3b993b;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.menu-item ul {
+  padding: 5px;
 }
 @keyframes pulse {
   0% {

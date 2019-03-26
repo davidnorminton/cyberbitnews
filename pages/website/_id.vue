@@ -14,10 +14,12 @@
       h3.main-heading(v-if="$store.state.view.mode === 'list'") Latest news from {{ site }}
       listView(:news="news", v-if="$store.state.view.mode === 'list'")
       cardView(:news="news", v-else="$store.state.view.mode === 'card'")
+      tableView(:news="news", v-else-if="$store.state.view.mode === 'table'")
 </template>  
 <script>
 import {article} from '@/middleware/article'
 import listView from '@/components/listView'
+import tableView from '@/components/tableView'
 import cardView from '@/components/cardView'
 
 export default{
@@ -25,7 +27,8 @@ export default{
   props: ['id'],
   components: {
     listView,
-    cardView
+    cardView,
+    tableView
   },
   mixins: [article],
   head () {

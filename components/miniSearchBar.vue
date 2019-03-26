@@ -43,6 +43,7 @@ export default {
     transition: all .2s ease;
     position: relative;
     bottom: 1px;
+    right: 30px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: lightgrey;
@@ -58,7 +59,7 @@ export default {
   color: #d9d6d6;
   cursor: pointer;
   position: absolute;
-  right: 0;
+  right: 30px;
   top: 3px;
   font-size: 1.1rem;
 }

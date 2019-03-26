@@ -4,10 +4,12 @@
     .category-header(v-if="title !== null")
     listView(:news="news", v-if="$store.state.view.mode === 'list'")
     cardView(:news="news", v-else-if="$store.state.view.mode === 'card'")
+    tableView(:news="news", v-else-if="$store.state.view.mode === 'table'")
 </template>  
 <script>
 import listView from '@/components/listView'
 import cardView from '@/components/cardView'
+import tableView from '@/components/tableView'
 import {article} from '@/middleware/article'
 
 export default{
@@ -16,7 +18,8 @@ export default{
   mixins: [article],
   components: {
     listView,
-    cardView
+    cardView,
+    tableView
   },    
   head () {
     return {

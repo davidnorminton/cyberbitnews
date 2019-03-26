@@ -10,10 +10,7 @@ export const mutations = {
     openMenu(state) {
         state.menuVisible = 1;
     },
-    selectCard(state) {
-        state.mode = 'card';
-    },
-    selectList(state) {
-        state.mode = 'list';
+    selectState(state, mode) {
+        state.mode = mode;
     }
 }; 

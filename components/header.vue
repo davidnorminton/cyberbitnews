@@ -96,15 +96,7 @@ export default {
             {
               name: 'offensive-security',
               link: 'offensive-security.com'
-            },
-            {
-              name: 'gitconnected',
-              link: 'gitconnected.com'
-            },
-            {
-              name: '	uxplanet',
-              link: '	uxplanet.org'
-            }                        
+            }                       
           ]
       }
     }  

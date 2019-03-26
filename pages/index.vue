@@ -6,11 +6,13 @@
     transition(name='outIn')
       cardView(:news="news", v-if="$store.state.view.mode === 'card'")
       listView(:news="news", v-else-if="$store.state.view.mode === 'list'")
+      tableView(:news="news", v-else-if="$store.state.view.mode === 'table'")
 </template>
 
 <script>
 import listView from '@/components/listView'
 import cardView from '@/components/cardView'
+import tableView from '@/components/tableView'
 import {article} from '@/middleware/article'
 import spinner from '@/components/spinner'
 
@@ -21,7 +23,8 @@ export default{
   components: {
     spinner,
     listView,
-    cardView
+    cardView,
+    tableView
   },
   head () {
     return {

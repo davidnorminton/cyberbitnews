@@ -2,7 +2,7 @@
   div       
     spinner
     div(v-cloak)  
-    h3.heading.main-heading Latest articles
+    h3.main-heading Latest articles
     transition(name='outIn')
       cardView(:news="news", v-if="$store.state.view.mode === 'card'")
       listView(:news="news", v-else-if="$store.state.view.mode === 'list'")

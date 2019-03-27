@@ -89,14 +89,11 @@ body {
 }
 /* headings */
 .main-heading {
-  color: $secondary-dark-color;
-  font-size: 1.4rem;
+  color: $dark-background;
+  font-size: 2.4rem;
 }
 .main-heading::before {
   width: 850px;
-}
-.heading {
-  font-weight: normal;
 }
 // sub headings
 .sub-heading {
@@ -139,6 +136,9 @@ body {
 /** page transitions **/
 .outIn-enter-active{
   animation: fadeIn 1.5s ease-in;
+}
+.singleSite .hideWebsitePage {
+  display: none;
 }
 @keyframes fadeIn{
   0%{

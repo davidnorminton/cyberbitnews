@@ -8,7 +8,7 @@ header {
   bottom: 0;
   width: 300px;
   height: 100%;
-  background: #414552;
+  background: $dark-background;
   z-index: 1;
   box-sizing: border-box;
   transition: all linear .4s;
@@ -29,7 +29,7 @@ header a h1 {
   display: inline-block;
   margin: 0;
   position: absolute;
-  left: 10px;
+  left: 23px;
   top: 10px;
 }
 header a h1 small {

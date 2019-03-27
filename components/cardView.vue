@@ -8,10 +8,10 @@
           backgroundSize: 'cover', \
           backgroundPosition: 'center center',\
           width: '100%'}", :data-src='article.image')
-      .from-info
+      .from-info(:title="'All articles from ' + article.domain")
         nuxt-link.nav-link.posted-from(:to="'/website/' + article.domain") {{ article.domain }}    
       .post-text
-        a.post-title(target='_blank', :href="article.url ")
+        a.post-title(target='_blank', :href="article.url", title="Read this article")
           h2 {{ article.title }}
       .info
         .date
@@ -21,7 +21,7 @@
           i.icon-clock(aria="hidden", v-if="article.wpm")
           span.wpm {{ wpm(article.wpm) }}
         nuxt-link.nav-link(:to="'/comments/' + article.id") 
-          i.icon-chat(aria="hidden")  
+          i.icon-chat(aria="hidden", title="Comment on this article")  
 </template>
 <script>
 

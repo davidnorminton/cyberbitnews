@@ -9,11 +9,12 @@
           backgroundPosition: 'center center',\
           width: '100%'}", :data-src='article.image')
       .post-text
-        a.post-title(target='_blank', :href="article.url ")
+        a.post-title(target='_blank', :href="article.url" , title="Read this article")
           h2 {{ article.title }}
         .post-snippet {{ snippet(article.title, article.snippet) }} ...
         div
-          nuxt-link.nav-link.posted-from(:to="'/website/' + article.domain") {{ article.domain }}
+          nuxt-link.nav-link.posted-from(:to="'/website/' + article.domain", 
+            :title="'All articles from ' + article.domain") {{ article.domain }}
         div
           i.icon-calendar(aria="hidden")
           time.post-date {{ fmtDate(article.date, currentYear) }}

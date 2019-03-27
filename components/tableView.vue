@@ -1,17 +1,17 @@
 <template lang="pug">
 table(:key='$route.params.id')
   tr.row(v-for='(article, index) in this.$store.state.news.news', :key='index')
+    td.hideWebsitePage
+      nuxt-link(:to="'/website/' + article.domain", :title="'All articles from ' + article.domain") {{ article.domain }}    
     td
-      nuxt-link(:to="'/website/' + article.domain") {{ article.domain }}    
-    td
-      a(target='_blank', :href="article.url ")
+      a(target='_blank', :href="article.url", title="Read this article")
         h2 {{ article.title }}
     td
       time {{ fmtDate(article.date, currentYear) }}
     td    
       span {{ wpm(article.wpm) }}
     td    
-      nuxt-link.nav-link(:to="'/comments/' + article.id") 
+      nuxt-link.nav-link(:to="'/comments/' + article.id", title="Comment on this article") 
         i.icon-chat(aria="hidden") 
 </template>
 <script>
@@ -67,9 +67,13 @@ table {
 td {
   padding: 5px;
 }
-tr a, tr h2, tr time, tr span {
+tr a, tr h2, tr time, tr span, tr .icon-chat {
   text-decoration: none;
   font-size: 12px;
   color: $primary-table-color;
+}
+.icon-chat {
+  font-size: 14px;
+  margin: 0;
 }
 </style>

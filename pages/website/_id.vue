@@ -1,5 +1,5 @@
 <template lang="pug">
-    div
+    .singleSite
       section.about-section
         .about-block
           a(target='_blank', :href="link")
@@ -13,7 +13,7 @@
                   | READ MORE
       h3.main-heading(v-if="$store.state.view.mode === 'list'") Latest news from {{ site }}
       listView(:news="news", v-if="$store.state.view.mode === 'list'")
-      cardView(:news="news", v-else="$store.state.view.mode === 'card'")
+      cardView(:news="news", v-else-if="$store.state.view.mode === 'card'")
       tableView(:news="news", v-else-if="$store.state.view.mode === 'table'")
 </template>  
 <script>
@@ -114,4 +114,8 @@ export default{
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.singleSite .hideWebsitePage {
+  display: none;
+}
+</style>

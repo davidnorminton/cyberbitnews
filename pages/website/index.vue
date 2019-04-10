@@ -26,6 +26,10 @@ export default {
           type: "developer"
         },
         {
+          site: 'css-tricks',
+          type: 'developer'
+        },
+        {
           site: "smashingmagazine",
           type: "developer"
         },

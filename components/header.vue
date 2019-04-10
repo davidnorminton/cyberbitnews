@@ -62,6 +62,10 @@ export default {
             {
               name: 'omgubuntu',
               link: 'omgubuntu.com'
+            },
+            {
+              name: 'linuxhandbook',
+              link: 'linuxhandbook.com'
             }
           ],
           Infosec: [

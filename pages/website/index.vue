@@ -96,6 +96,10 @@ export default {
         {
           site: "linuxuprising",
           type: "linux"
+        },
+        {
+          site: 'linuxhandbook',
+          type: 'linux'
         }
       ]
     }

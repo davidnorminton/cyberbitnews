@@ -20,6 +20,11 @@ export default {
               link: 'freecodecamp.com'
             },
             {
+              name: 'css-tricks',
+              link: 'css-tricks.com'
+            },
+            
+            {
               name: 'smashingmagazine',
               link: 'smashingmagazine.com'
             },

@@ -18,8 +18,8 @@ header {
 }
 .header-menu { 
   overflow-y: auto;
-  height: 100%;
   padding-top: 20px;
+  height: calc(100% - 60px);
 }
 
 header a h1 {

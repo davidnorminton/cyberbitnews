@@ -23,11 +23,29 @@ export default {
   display: block;
 }
 .main-search-field {
-  width: 90%;
-  display: block;
-  margin: 20px 5%;
+  width: 100%;
+  cursor: text;
+  color: black;
+  display: inline-block;
+  border: 1px solid #d9d6d6;
+  border-radius: 2rem;
+  font-size: .9rem;
+  line-height: 2rem;
+  padding: 2px 0 2px 20px;
+  outline: none;
+  transition: all .2s ease;
+  position: relative;
+  bottom: 1px;
+  box-sizing: border-box;
 }
 .main-search-button {
-  right: 19px;
+  border: 2px solid transparent;
+  background: transparent;
+  color: #d9d6d6;
+  cursor: pointer;
+  position: absolute;
+  top: 2px !important;
+  font-size: 1.4rem;
+  right: 5px;
 }
 </style>

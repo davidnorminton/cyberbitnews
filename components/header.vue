@@ -9,10 +9,10 @@ export default {
     return {
       menuWidth: 300,
       query: '',
-      developer: false,
-      infosec: false,
-      tech: false,
-      linux: false,
+      developer: true,
+      infosec: true,
+      tech: true,
+      linux: true,
       subMenu: {
           Developer: [
             {

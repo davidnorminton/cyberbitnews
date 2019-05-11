@@ -14,6 +14,11 @@
   font-size: 18px;
   color: $primary-medium-color !important;
   line-height: 30px;
+
+  a {
+    display: inline-block;
+    margin-left: 10px;
+  }
 }
 .about-block h2 {
   color: $dark-background;

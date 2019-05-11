@@ -20,6 +20,11 @@ export default {
               link: 'freecodecamp.com'
             },
             {
+              name: 'css-tricks',
+              link: 'css-tricks.com'
+            },
+            
+            {
               name: 'smashingmagazine',
               link: 'smashingmagazine.com'
             },
@@ -62,6 +67,10 @@ export default {
             {
               name: 'omgubuntu',
               link: 'omgubuntu.com'
+            },
+            {
+              name: 'linuxhandbook',
+              link: 'linuxhandbook.com'
             }
           ],
           Infosec: [

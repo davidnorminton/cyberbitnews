@@ -26,6 +26,10 @@ export default {
           type: "developer"
         },
         {
+          site: 'css-tricks',
+          type: 'developer'
+        },
+        {
           site: "smashingmagazine",
           type: "developer"
         },
@@ -96,6 +100,10 @@ export default {
         {
           site: "linuxuprising",
           type: "linux"
+        },
+        {
+          site: 'linuxhandbook',
+          type: 'linux'
         }
       ]
     }

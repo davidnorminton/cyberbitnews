@@ -156,9 +156,9 @@ export default {
     },
     closeMenu() {
       this.menu.style.left = '-255px';
-      this.body.style.left = '45px';
-      this.body.style.width = 'calc(100% - 45px)';
-      this.mainHeader.style.width = 'calc(100% - 45px)';
+      this.body.style.left = '52px';
+      this.body.style.width = 'calc(100% - 52px)';
+      this.mainHeader.style.width = 'calc(100% - 52px)';
       if(this.$store.state.view.mode === 'card') {
           this.content.style.maxWidth = 'none';
       }    

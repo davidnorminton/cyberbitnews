@@ -21,6 +21,8 @@ export const article = {
     async getPage() {
       await this.$axios.$get(this.api + this.getApiRoute(this.$route.params.id))
         .then(response => {
+          console.log(this.api + this.getApiRoute(this.$route.params.id));
+          console.table(response);
           let l = [...response].length;
           for (let i = 0; i < l; i++) {
             this.$store.commit('news/addToNewsList', response[i]);

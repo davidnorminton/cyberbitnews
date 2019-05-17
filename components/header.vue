@@ -39,6 +39,10 @@ export default {
             {
               name: '	uxplanet',
               link: '	uxplanet.org'
+            },
+            {
+              name: 'codeburst',
+              link: 'codeburst.io'
             }
           ],
           Tech: [

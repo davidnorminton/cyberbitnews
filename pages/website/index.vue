@@ -46,6 +46,10 @@ export default {
            type: 'developer'
         },
         {
+           site: 'codeburst',
+           type: 'developer'
+        },
+        {
             site: 'techspot',
             type: 'tech'
         },

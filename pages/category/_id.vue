@@ -42,7 +42,7 @@ export default{
       params: null,
       included: [],
       title: null,
-      apiRoute: '/category.php?cat=',
+      apiRoute: '/category.php?id=',
     }
   },
   watch: {

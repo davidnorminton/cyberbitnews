@@ -13,7 +13,12 @@ class Route {
     {
         $this->url = $_SERVER['REQUEST_URI'];
         $this->splitUrl = explode('/', $this->url);
-        array_shift($this->splitUrl);
+        for($i = 0, $l = count($this->splitUrl); $i < $l; $i++) {
+            if(empty($this->splitUrl[$i])) {
+                unset($this->splitUrl[$i]);
+            }
+        }
+        $this->splitUrl = array_values($this->splitUrl);
         
         if (!$this->splitUrl[0]) {
             $this->module = $this->default;
@@ -34,7 +39,7 @@ class Route {
 
     public function hasParams()
     {
-        return $this->splitUrl > 1 ? true : false; 
+        return count($this->splitUrl) > 1 ? true : false; 
     }
    
     public function _getSplitUrl()

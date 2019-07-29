@@ -28,7 +28,7 @@ export default{
       params: null,
       included: [],
       title: [],
-      apiRoute: '/search.php?q='
+      apiRoute: '/search.php?id='
     }
   },
   watch: {

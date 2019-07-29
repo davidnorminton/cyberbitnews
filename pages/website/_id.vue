@@ -53,7 +53,7 @@ export default{
       link: '',
       bio: '',
       aboutUrl: '',
-      apiRoute: "/website.php?site="
+      apiRoute: "/website.php?id="
     }
   },
   watch: {

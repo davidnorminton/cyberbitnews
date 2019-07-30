@@ -5,7 +5,19 @@ $Route = new Route();
 
 $url = $Route->_getApiRoute();
 if($Route->hasParams()) {
-    include $Route->_getModule() . "/id.php";
+    if(file_exists('pages/' . $Route->_getModule() . "/id.php")) {
+        include 'pages/' . $Route->_getModule() . "/id.php";
+    }  else {
+        if(file_exists('pages/' . $Route->_getModule() . "/index.php")) {
+           include 'pages/' . $Route->_getModule() . "/index.php";
+        } else {
+           include "404.php";
+        }
+    }  
 } else {
-    include $Route->_getModule() . "/index.php";
+    if(file_exists('pages/' .$Route->_getModule() . "/index.php")) {
+        include 'pages/' . $Route->_getModule() . "/index.php";
+    } else {
+        include "404.php";
+    }    
 }

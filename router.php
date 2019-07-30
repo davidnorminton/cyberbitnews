@@ -25,6 +25,11 @@ class Route {
         } else {
             $this->module = $this->splitUrl[0]; 
         }
+        if(strtolower($this->module) === 'search') {
+            if($_GET['id']) {
+                $this->splitUrl[1] = $_GET['id'];
+            }    
+        }
     }
 
     public function _getUrl()
@@ -50,7 +55,7 @@ class Route {
     public function _getApiRoute()
     {
         if(!$this->hasParams()) {
-            return $this->api . $this->Module . '.php';
+            return $this->api . $this->module . '.php';
         } else {
             return $this->api . $this->module . '.php' . '?id=' . $this->splitUrl[1]; 
         }    

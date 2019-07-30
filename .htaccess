@@ -1,4 +1,4 @@
-AddType x-httpd-php72 .php
+#AddType x-httpd-php72 .php
 
 # Turn rewriting on
 Options +FollowSymLinks

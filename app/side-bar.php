@@ -5,7 +5,7 @@
     <nav class="header-menu">
         <ul class="category-list">
             <li class="menu-item">
-                <a href="/" class="nav-link nuxt-link-exact-active nuxt-link-active">
+                <a href="/latest" class="nav-link nuxt-link-exact-active nuxt-link-active">
                     <i class="icon-fire"></i>latest
                 </a>
             </li>

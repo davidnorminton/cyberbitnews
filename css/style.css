@@ -188,6 +188,7 @@ html {
 
 body {
 	font-family: Roboto, sans-serif;
+	overflow-x: hidden
 }
 
 .main-header {
@@ -299,9 +300,8 @@ body {
 }
 
 .main-heading {
-    color: #000000;
-    font-size: 2.8rem;
-    font-family: serif;
+	color: #414552;
+	font-size: 2.4rem
 }
 
 .main-heading:before {
@@ -692,7 +692,7 @@ header a h1 small {
 }
 
 article {
-	margin-bottom: 20px
+	margin-bottom: 50px
 }
 
 .post {
@@ -701,9 +701,10 @@ article {
 }
 
 .post-text {
-	width: 100%;
+	width: calc(100% - 260px);
 	float: right;
 	box-sizing: border-box;
+	padding-left: 8px
 }
 
 .post-image-wrap {
@@ -725,15 +726,14 @@ article {
 
 .wpm {
 	color: rgba(0, 0, 0, .91)!important;
-	font-size: 14px;
-	font-weight: bold;
+	font-size: 14px
 }
 
 .post-title {
 	text-decoration: none;
 	line-height: 25px!important;
 	font-weight: 600!important;
-	font-size: 16px
+	font-size: 12px
 }
 
 .icon-calendar,
@@ -766,21 +766,18 @@ icon-clock {
 
 .post-date {
 	color: rgba(0, 0, 0, .91)!important;
-	font-size: 14px;
-	font-weight: bold;
+	font-size: 14px
 }
 
 .post-snippet {
-	color: rgba(41, 41, 61)!important;
-	line-height: 22px;
-	font-size: 18px;
+	color: rgba(0, 0, 0, .54)!important;
+	line-height: 22px
 }
 
 .posted-from {
 	line-height: 30px;
 	text-decoration: none;
-	color: red;
-	font-size: 18px;
+	color: #186491
 }
 
 time {
@@ -879,16 +876,12 @@ aside {
 }
 
 footer {
-    border-top: 1px solid #cfd4db;
-    clear: both;
-    display: block;
-    position: relative;
-    top: 30px;
-    padding-top: 5px;
-    left: 300px;
-    width: calc(100% - 300px);
-    padding: 20px;
-    box-sizing: border-box;
+	border-top: 1px solid #cfd4db;
+	clear: both;
+	display: block;
+	position: relative;
+	top: 30px;
+	padding-top: 5px
 }
 
 .footer-link {
@@ -927,7 +920,7 @@ footer {
 
 .about,
 .about-section {
-	margin: 20px 0 90px;
+	margin: 20px 0 10px;
 	overflow: -webkit-paged-x
 }
 
@@ -985,7 +978,7 @@ footer {
 
 .header-search {
 	position: absolute;
-	right: -20px;
+	right: 78px;
 	top: 4px
 }
 
@@ -1070,81 +1063,42 @@ footer {
 	animation: spin-data-v-0b3ee234 1s linear infinite
 }
 
-
-.list-cats {
-    list-style: none;
-}
-.list-cats li {
-    float: left;
-    width: 46%;
-    margin: 2%;
-    border: 1px solid grey;
-    box-sizing: border-box;
-}
-.list-cats li a {
-    color: #222121;
-    font-size: 1.2rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-} 
-.cat-image {
-    border-style: none;
-    width: 100%;
-    height: 225px;  
+@-webkit-keyframes spin-data-v-0b3ee234 {
+	0% {
+		-webkit-transform: rotate(0)
+	}
+	to {
+		-webkit-transform: rotate(1turn)
+	}
 }
 
-table, tr, td {
-  border: 1px solid #cdc8c8;
-  border-collapse: collapse;
-  text-align: left; 
+@keyframes spin-data-v-0b3ee234 {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0)
+	}
+	to {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn)
+	}
 }
-thead > tr {
-  font-size: 1.4rem;
+
+@-webkit-keyframes spin-reverse-data-v-0b3ee234 {
+	0% {
+		-webkit-transform: rotate(0)
+	}
+	to {
+		-webkit-transform: rotate(-1turn)
+	}
 }
-td {
-   padding: 15px 0 15px 10px;
+
+@keyframes spin-reverse-data-v-0b3ee234 {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0)
+	}
+	to {
+		-webkit-transform: rotate(-1turn);
+		transform: rotate(-1turn)
+	}
 }
-.all-table {
-  width: 100%;
-}
-.pos {
-  text-align: center;
-}
-.type {
-  text-transform: capitalize;
-}
-.search-wrapper {
-	position: relative;
-  }
-  .main-search {
-	position: relative;
-	display: block;
-  }
-  .main-search-field {
-	width: 100%;
-	cursor: text;
-	color: black;
-	display: inline-block;
-	border: 1px solid #d9d6d6;
-	border-radius: 2rem;
-	font-size: .9rem;
-	line-height: 2rem;
-	padding: 2px 0 2px 20px;
-	outline: none;
-	transition: all .2s ease;
-	position: relative;
-	bottom: 1px;
-	box-sizing: border-box;
-  }
-  .main-search-button {
-	border: 2px solid transparent;
-	background: transparent;
-	color: #d9d6d6;
-	cursor: pointer;
-	position: absolute;
-	top: 2px !important;
-	font-size: 1.4rem;
-	right: 33px;
-  }
